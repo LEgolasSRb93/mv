@@ -79,16 +79,18 @@ U ovom dokumentu ce se nalaziti revizija koda koji je Srdjan napisao za obradu
 slike sa kamere. I koji je potrebno ja da unapredim i dokumentujem kako bih ga
 predao kao projekat za predmet Masinska vizija.
 
-Cilj projekta je detekcija stanja dioda na tastaturi uz pomoc kamere koja ce se pokretati. Pokreti
-kamere su za sada sekundarna stvar, i cilj je pronaci i detektovati stanje dioda na tastaturi, tako
-da se dobija veran prikaz stanja na tastaturi iz programa koji ce se pokretati sa openCV bibliotekom.
-Pokreti kamere ce se implementirati tek nakon komunikacije sa asistentkinjom, i kada staticna kamera
-bude davala 100% rezultate. Tj kada algoritam obrade slike bude ispeglan, tako da ce pokreti biti samo
-dodatak vec postojecem programu.
+Cilj projekta je detekcija stanja dioda na tastaturi uz pomoc kamere koja ce se
+pokretati. Pokreti kamere su za sada sekundarna stvar, i cilj je pronaci i
+detektovati stanje dioda na tastaturi, tako da se dobija veran prikaz stanja na
+tastaturi iz programa koji ce se pokretati sa openCV bibliotekom.
+Pokreti kamere ce se implementirati tek nakon komunikacije sa asistentkinjom, i
+kada staticna kamera bude davala 100% rezultate. Tj kada algoritam obrade slike
+bude ispeglan, tako da ce pokreti biti samo dodatak vec postojecem programu.
 
-Srdjan je u sklopu projekta za Liebherr vec uradio obradu slike, i dobijanje rezultata, po njegovom
-izvestaju, u 100% slucajeva. U ovom dokumentu ce se nalaziti revizija tog koda i to u smislu da se
-sto vise rasclani i uvide nedostaci, i mesta za poboljsanje.
+Srdjan je u sklopu projekta za Liebherr vec uradio obradu slike, i dobijanje
+rezultata, po njegovom izvestaju, u 100% slucajeva. U ovom dokumentu ce se
+nalaziti revizija tog koda i to u smislu da se sto vise rasclani i uvide
+nedostaci, i mesta za poboljsanje.
 
 Ideja realizacije:
 - koristiti openCV bibloteku za Python3.
