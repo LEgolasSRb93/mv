@@ -12,6 +12,29 @@ radi, samo ponekad sam drzac za kameru pravi probleme algoritmu.
 Napraviti setap tako da se lako moze integrisati algoritam sa LIVE kamerom, da
 se proveri taj nacin rada.
 
+POTREBNO URADITI:
+=====================
+* Strukturirati kod i napraviti logicke celine, po mogucstvu funkciju za
+  procesing, sa vracenom obradjenom slikom. Ili to nije potrebno?
+* Iskomentarisati kod.
+* Javiti se Mariji sa trenutnim rezultatima.
+* Krenuti sa gledanjem pomeranja kamere u ovom slucaju? Kako postici da se
+  odredi sa pokretanjem kamere?
+* Pogledati da li isti kod radi i na Windows-u pod Anaconda Navigator-om?
+
+OPIS TRENUTNOG STANJA:
+======================
+Kalibracija napravljena na nacin kako je opisano, sa 10 uzetih snimaka, i
+napravljena tako da posle 10 snimaka ima sigurne diode. Tj da ima pozicije
+dioda gde se one sigurno nalaze, nakon cega je moguce preci na procesing.
+U odeljku procesinga, napravljena jednostavna obrada slike, kao i u kalibraciji
+pre nego se dodje do funkcije za prepoznavanje krugova. Nakon cega, usled
+sigurne pozicije dioda, moze se odrediti stanje diode (ukljucena/iskljucena)
+iz binarizovane slike (da li se na mestu centra kruga nalazi nula ili 255,
+ukoliko je nula = iskljuceno, obrnuto = ukljuceno).
+Iscrtavanje centara kruga napravljeno nakon procesinga, kao cist pokazatelj
+toga gde se diode nalaze. I gde treba da se odredjuje stanje.
+
 OPIS KALIBRACIJE:
 ======================
 Napraviti setap tako da je kamera fiksna u odnosu na tastaturu. Sto je moguce
