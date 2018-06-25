@@ -21,9 +21,15 @@ POTREBNO URADITI:
 * Krenuti sa gledanjem pomeranja kamere u ovom slucaju? Kako postici da se
   odredi sa pokretanjem kamere?
 * Pogledati da li isti kod radi i na Windows-u pod Anaconda Navigator-om?
+* Pogledati trenutni kod za detekciju pokreta. Obraditi funkcije koje su
+  koriscene?
+* Implementirati da staje detekcija dioda kada se detektuje pokret!
+        (Pauzirati sa delom koda koji se izvrsava za detekciju)
 
 OPIS TRENUTNOG STANJA:
 ======================
+Ubaceno za detekciju pokreta. Pogledaj opet.
+
 Kalibracija napravljena na nacin kako je opisano, sa 10 uzetih snimaka, i
 napravljena tako da posle 10 snimaka ima sigurne diode. Tj da ima pozicije
 dioda gde se one sigurno nalaze, nakon cega je moguce preci na procesing.
