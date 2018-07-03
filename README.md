@@ -16,21 +16,21 @@ POTREBNO URADITI:
 =====================
 * Strukturirati kod i napraviti logicke celine, po mogucstvu funkciju za
   procesing, sa vracenom obradjenom slikom. Ili to nije potrebno?
-* Iskomentarisati kod.
-* Javiti se Mariji sa trenutnim rezultatima.
-* Krenuti sa gledanjem pomeranja kamere u ovom slucaju? Kako postici da se
-  odredi sa pokretanjem kamere?
+* Iskomentarisati kod. (pogledati)
+* Javiti se Mariji sa trenutnim rezultatima. (opet)
 * Pogledati da li isti kod radi i na Windows-u pod Anaconda Navigator-om?
 * Pogledati trenutni kod za detekciju pokreta. Obraditi funkcije koje su
-  koriscene?
-* Implementirati da staje detekcija dioda kada se detektuje pokret!
-        (Pauzirati sa delom koda koji se izvrsava za detekciju)
+  koriscene? (hitno)
 
 OPIS TRENUTNOG STANJA:
 ======================
-Ubaceno za detekciju pokreta. Pogledaj opet.
+- Implementirano da staje detekcija dioda kada se detektuje pokret ispred kamere.
+Kod radi, mada ima mali delay kada se to izvrsava zbog nestrukturiranog koda.
+Proveriti to jos jednom.
 
-Kalibracija napravljena na nacin kako je opisano, sa 10 uzetih snimaka, i
+- Ubaceno za detekciju pokreta. Pogledaj opet.
+
+- Kalibracija napravljena na nacin kako je opisano, sa 10 uzetih snimaka, i
 napravljena tako da posle 10 snimaka ima sigurne diode. Tj da ima pozicije
 dioda gde se one sigurno nalaze, nakon cega je moguce preci na procesing.
 U odeljku procesinga, napravljena jednostavna obrada slike, kao i u kalibraciji
