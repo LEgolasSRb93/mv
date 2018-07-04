@@ -1,0 +1,49 @@
+Izvestaj za projekat iz Masinske vizije
+Tema: Prepoznavanje stanja industrijske tastature
+
+Uvod:
+Cilj projekta iz predmeta Masinska vizija, na master studijama odseka za
+Elektroniku, bio je da se na tastaturi koja se koristi u industrijske svrhe
+detektiju stanja same tastature koriscenjem kamere koja je javno dostupna, kao
+i da se manipulacijom stanja tastature, prepoznavanje kamere prilagodi tako da
+uvek daje informacije o stanju koje odgovaraju trenutnom stanju na samoj
+kameri. Realizacija projekta je odradjena tako da se lako moze iskoristiti u
+sklopu veceg sistema, tako da informacije prikupljene uz pomoc ovog programa??
+mogu biti iskoriscene u nekoj daljoj obradi.
+
+- slika tastature
+
+Opis sistema koji je koriscen:
+
+Tastatura koja je koriscena pri izradi projekta je industrijska tastatura koja
+se koristi u velikim gradjevinskim masinama. Sama tastatura ima 6 tastera,
+rasporedjenih u 3 reda, jedan ispod drugog, po dva u redu. I iznad svakog
+tastera postoje po 3 diode. Diode koje se nalaze iznad tastera predstavljaju
+trenutno stanje na izlazu same tastature, a kao reakcija na trenutno stanje u
+nekom vecem sistemu, i kao reakcija na sam pritisak tastera na tastaturi. Kako
+je emulacija celokupnog sistema u kome radi tastatura previse kompleksna, za
+izradu projekta je koriscena jednostavnija postavka.
+
+Tastaura ima ulazne i izlazne pinove preko kojih je moguce komunicirati sa
+samom tastaturom. Interfejs preko kog se kontrolise tastatura je CAN interfejs.
+I na osnovu slanja odredjenih poruka preko CAN interfejsa moguce je
+kontrolisati koje diode su ukljucene, odnosno iskljucene. I takodje, u kom
+rezimu ce sama tastatura raditi. Za realizaciju samog projekta, tastatura je
+podesena tako da se slanjem odredjenih poruka, menja stanje dioda na tastaturi,
+cija je stanja potrebno prepoznati. S ovim u vezi, koriscen je konverter
+USB/CAN i program proizvodjaca samog konvertera kako bi se slale HEX poruke ka
+tastaturi.
+
+- slika i opis samog protokola, kako izgleda poruka i sta odredjuje koja ce
+  dioda biti ukljucena, koja iskljucena.
+
+Slanjem razlicitih poruka menjaju se stanja dioda, cime se testira algoritam za
+prepoznavanje trenutnog stanja.
+
+Kamera koja je koriscena prilikom izrade projekta je USB Web kamera.
+
+- blok dijagram sistema
+
+Opis softverske implementacije projekta:
+
+
