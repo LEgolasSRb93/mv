@@ -46,4 +46,30 @@ Kamera koja je koriscena prilikom izrade projekta je USB Web kamera.
 
 Opis softverske implementacije projekta:
 
+Softverska implementacija projekta je odradjena u programskom jeziku Python uz
+koriscenje biblioteke openCV za obradu slike.
 
+Implementacija je podeljena u dva dela, kalibraciju scene i dela za
+procesiranje trenutne slike koja se dobija sa kamere. Implementacija je
+napravljena tako da snimci sa pocetka pokretanja programa vrse kalibraciju,
+nakon cega sa podacima koji su dobijeni u kalibraciji dolazi do dela za
+procesiranje.
+
+- Deo za kalibraciju:
+        Kako bi se odradila kalibracija na pocetku, potrebno je da se tastaturi
+        posalje komanda o ukljucenim svim diodama iznad tastera. I to iz
+        razloga pozicioniranja svih dioda u sistemu, odnosno svesti programa o
+        poziciji svih dioda koje se nalaze na tastaturi. Unutar dela za
+        kalibraciju vrsi se obrada slike u nekoliko koraka.
+        Prvo se vrsi pretvaranje slike u crno-belu sliku, s obrzirom da boja
+        dioda ne igra u ovom algoritmu nikakvu ulogu. S tim da se i to moze
+        iskoristiti prilikom nekih slozenijih algoritama za odredjivanje
+        trenutnog stanja tastature.
+        Nakon toga se vrsi ekvalizacija histograma i fitriranje Gausovim
+        filtrom 5 reda. I binarizacija sa odredjenim pragom, kako bi se samo
+        sjaj dioda izdvojio na slici u beloj boji. Pri cemu je prag
+        binarizacije odredjen emprijski, s obzirom da tasteri koji se nalaze
+        ispod dioda imaju pozadinsko osvetljenje, koje u ovom projektu nije od
+        interesa za odredjivanje stanja dioda.
+        Na kraju, koristi se funkcija za odredjivanje obrazaca iz biblioteke
+        openCV
