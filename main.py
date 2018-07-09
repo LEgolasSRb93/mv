@@ -37,12 +37,19 @@ def calibration(cap, count):
     return frame,count,circles
 
 ### Live stream
-
 cap = cv2.VideoCapture(0)
 
+cv2.namedWindow('frame')
+cv2.moveWindow('frame', 2720, 20)
+
 ### Added for substraction
+# make structuring element for morph transformation of substracted image
+# MORPH_OPEN with MORPH_ELLIPSE, to kill all noise from MOG2 substraction
+# (errosion, then dilation), with this killed all noise
 kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3,3))
-fgbg = cv2.createBackgroundSubtractorMOG2()
+# getting the changes from live image in comparison with background created
+# with MOG2 here. applying the subtractor after every frame taken in loop
+fgbg = cv2.bgsegm.createBackgroundSubtractorMOG()
 ### Added for substraction
 
 count = 0
@@ -51,7 +58,9 @@ mode = 1
 
 if mode == 0:
     while(True):
-        # getting one frame from camera input
+        ### Testing mode
+        # only for showing the image from camera, only made for positioning
+        # the camera
         ret, frame = cap.read()
 
         cv2.imshow('frame', frame)
@@ -66,7 +75,6 @@ else:
 
         ### calibration part
         while count<10:
-            #  print(count)
             frame, count, circlesTemp = calibration(cap, count)
             if circlesTemp.shape[0] == 18:
                 circlesAll += circlesTemp
@@ -80,8 +88,10 @@ else:
         # getting one frame from camera input
         ret, frame = cap.read()
 
+        # use substractor on current frame, and morph on substracted image
         fgmask = fgbg.apply(frame)
         fgmask = cv2.morphologyEx(fgmask, cv2.MORPH_OPEN, kernel)
+        # find contour features and draw rectangle if there is something
         output = cv2.connectedComponentsWithStats(fgmask, 4, cv2.CV_32S)
         for i in range(output[0]):
             if output[2][i][4] >= 8000 and output[2][i][4] <= 100000:
@@ -89,6 +99,7 @@ else:
 
         if output[0] == 1:
             ### processing part
+            # if there are no intrusions in current scene
             # make gray image
             grayImg = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
             # equilize histogram
@@ -109,7 +120,6 @@ else:
                     diodeState[i] = 0
                 row, col = divmod(i, 6)
                 print("   ", row+1, "   |   ", col+1, "   |  ", diodeState[i])
-            #  print(diodeState)
 
             ### drawing positions of diodes calibration have found
             for i in circlesAll[:]:
@@ -119,7 +129,7 @@ else:
                 cv2.circle(frame,(i[0],i[1]),1,(0,0,255),2)
         else:
             os.system('clear')
-            print("Interruption detected!")
+            print("Intrusion detected!")
 
         cv2.imshow('frame', frame)
         if cv2.waitKey(1) & 0xFF == ord('q'):

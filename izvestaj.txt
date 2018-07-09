@@ -71,5 +71,47 @@ procesiranje.
         binarizacije odredjen emprijski, s obzirom da tasteri koji se nalaze
         ispod dioda imaju pozadinsko osvetljenje, koje u ovom projektu nije od
         interesa za odredjivanje stanja dioda.
-        Na kraju, koristi se funkcija za odredjivanje obrazaca iz biblioteke
-        openCV
+        Na kraju, koristi se funkcija HoughCircles za odredjivanje obrazaca iz
+        biblioteke openCV. Ova funkcija nalazi krugove zadatog precnika na
+        crno-beloj slici. Takodje, uz zadat precnik, potrebno je zadati jos
+        neke parametre kako bi se krugovi na slici odredili u najvecem broju
+        slucajeva.
+        Ova funkcija je iskoriscenja zbog same postavke kamere u odnosu na
+        tastaturu, kao i samog oblika dioda koje se pokusavaju odrediti. Kako
+        je cela postavka fiksna, empirijski su odredjene vrednosti koje se
+        prosledjuju kao argumenti funkciji za odredjivanje krugova.
+        Kada se dobiju svi krugovi koji se nalaze na samoj tastaturi, onda se
+        prelazi na sortiranje nadjenih rezultata, i to tako da se u nizu prvo
+        nalazi prvi red dioda, pa drugi, i na kraju treci, sa koordinatama
+        centara dioda. Kalibracija se zavrsava kada se 10 puta pronadju svih 18
+        dioda na tastaturi. Broj tacnih odredjivanja je uzet proizvoljno.
+        Nakon zavrsetka odredjivanja dioda u kalibraciji, dolazi do
+        usrednjavanja vrednosti koje su dobijene, i to tako da se dobiju
+        sigurne pozicije dioda nakon kalibracije, odnosno centri krugova koji
+        predstavljaju diode.
+- Deo za procesiranje:
+        Nakon dela za kalibraciju, vrsi se procesiranje ulazne slike na osnovu
+        podataka koji su dobijeni iz dela za kalibraciju. Ovaj deo softverske
+        implementacije se odnosi na deo za detekciju okulzije, i ostatka
+        procesiranja.
+        Detekcija okulzije se vrsi funkcijama za odredjivanje pomeraja na
+        osnovu pozadine. Prilikom pravljenja maske za odredjivanje pomeraja na
+        osnovu pozadine koristi se trenutna slika koja je dobijena sa kamere u
+        tom trenutku. Na osonvu cega se koriste funkcije za statisticku obradu
+        slike, za pomeraj koji je odredjen, odakle se dobijaju kordinate
+        pravougaonika u kome se nalazi objekat koji je usao u trenutnu scenu.
+        Ukoliko ovaj deo obrade da neke rezultate, odnosno ukoliko se detektuje
+        neki strani objekat na sceni, pauzira se sa detekcijom stanja dioda sve
+        dok se objekat ne ukloni. Nakon cega se detekcija nastavlja.
+        Detekcija se odvija samo ukoliko ne postoje smetnje, i ona se odvija u
+        delu preprocesiranja koje se sastoji od istih koraka kao u kalibraciji,
+        odnosno jednostavnih metoda za obradu slike, pri cemu je zavrsni korak
+        dobijane binarizovane slike. Kako su u kalibraciji dobijene sve
+        pozicije dioda, iz binarizovane slike je moguce odluciti o stanju dioda
+        samo jednostavnim upitom da li je piksel na poziciji centra odredjenog
+        kruga nula ili jedan. Time se dobija trenutno stanje dioda. Kako su
+        podaci iz kalibracije sortirani po redovima i pozicijama dioda, onda je
+        vrlo lako napraviti odlucivanje o trenutnom stanju.
+        U ovom delu se takodje i ispisuju sve relevantne poruke na standardni
+        izlaz, kako bi korisnik imao uvid u to kako program radi.
+
