@@ -6,6 +6,7 @@
 \usepackage[serbian]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
 
 \addto\captionsserbian{\renewcommand{\bibname}{Literatura}}
 
@@ -30,20 +31,23 @@ biblioteke}
 	\chapter{Uvod}
         Cilj projekta iz predmeta Ma\v{s}inska vizija, na master studijama odseka
         za Elektroniku, bio je da se na tastaturi koja se koristi u industrijske
-        svrhe detektiju stanja same tastature kori\v{s}\'{c}enjem kamere koja je javno
-        dostupna, kao i da se manipulacijom stanja tastature, prepoznavanje
-        kamere prilagodi tako da uvek daje informacije o stanju koje odgovaraju
-        trenutnom stanju na samoj kameri. Realizacija projekta je odradjena tako
+        svrhe detektiju stanja u kojima se nalazi. Prepoznavanje stanja je
+        uradjeno kori\v{s}\'{c}enjem kamere koja je javno dostupna. Testiranje
+        rada celog sistema je uradjeno promenom stanja tastature, ispisom
+        prepoznatog stanja, i poredjenjem rezultata algoritma sa realnim
+        stanjem tastature. Realizacija projekta je odradjena tako
         da se lako moze iskoristiti u sklopu ve\'{c}eg sistema, tako da informacije
         prikupljene uz pomo\'{c} ovog programa mogu biti iskori\v{s}\'{c}ene u nekoj daljoj
         obradi.
 
         \begin{figure}[htb]
             \centering
-            \includegraphics[scale=.5]{front.jpg}
+            \includegraphics[scale=.5, angle=90]{front.jpg}
             \caption{Pogled na tastaturu odozgo}
             \label{fig:keyboard}
         \end{figure}
+
+        \newpage
 
         \chapter{Opis sistema}
         Tastatura koja je kori\v{s}\'{c}ena pri izradi projekta je industrijska tastatura
@@ -74,7 +78,8 @@ biblioteke}
 
         Slanjem razli\v{c}itih poruka menjaju se stanja dioda, \v{c}ime se testira
         algoritam za prepoznavanje trenutnog stanja. Kamera koja je
-        kori\v{s}\'{c}ena prilikom izrade projekta je USB Web kamera.
+        kori\v{s}\'{c}ena prilikom izrade projekta je USB Web kamera rezolucije
+        1920x1080 piksela. Takodje, kamera ima autofokus, i 30 FPS.
 
         \begin{figure}[htb]
             \centering
@@ -83,14 +88,16 @@ biblioteke}
             \label{fig:keyboardmsg}
         \end{figure}
 
+        \newpage
+
         \chapter{Softverska implementacija}
         Softverska implementacija projekta je odradjena u programskom jeziku
         Python uz kori\v{s}\'{c}enje biblioteke openCV za obradu slike.
 
         Implementacija je podeljena u dva dela, kalibraciju scene i dela za
         procesiranje trenutne slike koja se dobija sa kamere. Implementacija je
-        napravljena tako da snimci sa pocetka pokretanja programa vrse
-        kalibraciju, nakon cega sa podacima koji su dobijeni u kalibraciji
+        napravljena tako da snimci sa po\v{c}etka pokretanja programa vr\v{s}e
+        kalibraciju, nakon \v{c}ega sa podacima koji su dobijeni u kalibraciji
         dolazi do dela za procesiranje.
 
         \section{Deo za kalibraciju}
@@ -98,12 +105,51 @@ biblioteke}
         po\v{s}alje komanda o uklju\v{c}enim svim diodama iznad tastera. I to iz
         razloga pozicioniranja svih dioda u sistemu, odnosno svesti programa o
         poziciji svih dioda koje se nalaze na tastaturi. Unutar dela za
-        kalibraciju vr\v{s}i se obrada slike u nekoliko koraka. Prvo se vr\v{s}i
-        pretvaranje slike u crno-belu sliku, s obrzirom da boja dioda ne igra u
-        ovom algoritmu nikakvu ulogu. S tim da se i to moze iskoristiti
+        kalibraciju vr\v{s}i se obrada slike u nekoliko koraka.
+
+        \begin{table}[h!]
+            \begin{tabular}{ll}
+                \includegraphics[scale=0.3]{original.png} &
+                \includegraphics[scale=0.3]{gray.png} \\
+                Ulazna slika &
+                Crno-bela ulazna slika
+            \end{tabular}
+        \end{table}
+
+        Prvo se vr\v{s}i pretvaranje ulazne slike u crno-belu sliku, s obzirom
+        da boja dioda ne igra nikakvu ulogu u ovom algoritmu, bitan je samo
+        sjaj dioda. S tim da se i boja dioda mo\v{z}e iskoristiti
         prilikom nekih slo\v{z}enijih algoritama za odredjivanje trenutnog stanja
-        tastature. Nakon toga se vrsi ekvalizacija histograma i fitriranje
-        Gausovim filtrom 5 reda. I binarizacija sa odredjenim pragom, kako bi
+        tastature.
+
+        \begin{table}[h!]
+            \begin{tabular}{ll}
+                \includegraphics[scale=0.3]{histogram.png} &
+                \includegraphics[scale=0.3]{gauss.png} \\
+                Slika nakon ekvalizacije histograma &
+                Slika nakon filtriranja Gausovim filtrom
+            \end{tabular}
+        \end{table}
+
+        Nakon toga se vrsi ekvalizacija histograma i fitriranje
+        Gausovim filtrom 5 reda. Ove dve manipulacije slike se rade zbog
+        pobolj\v{s}anja same slike nad kojom je potrebno odraditi prepoznavanje
+        odredjenih obrazaca. Ekvalizacija histograma je odradjena sa ciljem da
+        pobolj\v{s}a kontrast crno-bele slike, i da se \v{s}to bolje pripremi
+        za binarizaciju. Dok je filtriranje Gausovim filtrom odradjeno kako bi
+        se smanjio uticaj ekvalizacije histograma, odnosno smanjile razlike
+        izmedju susednih piksela.
+
+        \begin{table}[h!]
+            \begin{tabular}{ll}
+                \includegraphics[scale=0.3]{bin.png} &
+                \includegraphics[scale=0.3]{hough.png} \\
+                Binarizovana slika na kraju preprocesinga &
+                Slika sa odredjenim pozicijama dioda
+            \end{tabular}
+        \end{table}
+
+        I na kraju binarizacija sa odredjenim pragom, kako bi
         se samo sjaj dioda izdvojio na slici u beloj boji. Pri \v{c}emu je prag
         binarizacije odredjen emprijski, s obzirom da tasteri koji se nalaze
         ispod dioda imaju pozadinsko osvetljenje, koje u ovom projektu nije od
@@ -125,8 +171,18 @@ biblioteke}
         dobijene, i to tako da se dobiju sigurne pozicije dioda nakon
         kalibracije, odnosno centri krugova koji predstavljaju diode.
 
+        Problemi koje je mogu\'{c}e susresti prilikom ovakve implementacije
+        kalibracije su vezani za samu kameru, odnosno sliku koja dolazi sa
+        kamere. Tj, ukoliko ne\v{s}to udje u scenu koju kamera posmatra, zbog
+        autofokusa koji kamera poseduje, mogu\'{c}e je dobiti druga\v{c}ije
+        slike od o\v{c}ekivanih, prilikom \v{c}ega ne mo\v{z}e do\'{c}i do
+        dobre kalibracije sistema. Takodje, za kalibraciju je potrebno da sve
+        diode na tastaturi budu upaljenje u vreme kalibracije, kako bi sistem
+        imao uvid u sve diode koje se nalaze na tastaturi, pa ukoliko neke od
+        dioda nisu upaljene, kalibracija nikad ne\'{c}e biti zavr\v{s}ena.
+
         \section{Deo za procesiranje}
-        Nakon dela za kalibraciju, vrsi se procesiranje ulazne slike na osnovu
+        Nakon dela za kalibraciju, vr\v{s}i se procesiranje ulazne slike na osnovu
         podataka koji su dobijeni iz dela za kalibraciju. Ovaj deo softverske
         implementacije se odnosi na deo za detekciju okulzije, i ostatka
         procesiranja. Detekcija okulzije se vrsi funkcijama za odredjivanje
@@ -137,8 +193,18 @@ biblioteke}
         dobijaju kordinate pravougaonika u kome se nalazi objekat koji je usao
         u trenutnu scenu. Ukoliko ovaj deo obrade da neke rezultate, odnosno
         ukoliko se detektuje neki strani objekat na sceni, pauzira se sa
-        detekcijom stanja dioda sve dok se objekat ne ukloni. Nakon cega se
-        detekcija nastavlja. Detekcija se odvija samo ukoliko ne postoje
+        detekcijom stanja dioda sve dok se objekat ne ukloni.
+
+        \begin{table}[h!]
+            \begin{tabular}{ll}
+                \includegraphics[scale=0.3]{intrusionFirst.png} &
+                \includegraphics[scale=0.4]{intrusionMsg.png} \\
+                Strani objekat u sceni &
+                Poruka koja se ispisuje u ovom slu\v{c}aju
+            \end{tabular}
+        \end{table}
+
+        Nakon \v{c}ega se detekcija nastavlja. Detekcija se odvija samo ukoliko ne postoje
         smetnje, i ona se odvija u delu preprocesiranja koje se sastoji od
         istih koraka kao u kalibraciji, odnosno jednostavnih metoda za obradu
         slike, pri cemu je zavr\v{s}ni korak dobijanje binarizovane slike. Kako su u
@@ -150,6 +216,44 @@ biblioteke}
         trenutnom stanju. U ovom delu se takodje i ispisuju sve relevantne
         poruke na standardni izlaz, kako bi korisnik imao uvid u to kako
         program radi.
+
+        \begin{table}[h!]
+            \begin{tabular}{ll}
+                \includegraphics[scale=0.3]{firstKey.png} &
+                \includegraphics[scale=0.4]{firstRep.png} \\
+                Odredjivanje stanja dioda &
+                Ispis trenutnog stanja
+            \end{tabular}
+        \end{table}
+
+        Kako su u delu za detekciju okulzije kori\v{c}\'{c}ene funkcije koje
+        nalaze promenu u samoj sceni, i referentna slika koje je
+        kori\v{s}\'{c}ena je slika koja je trenutno uzeta sa kamere, mogu se
+        pojaviti problemi sa detekcijom okulzije u nekim slu\v{c}ajevima. I to
+        ukoliko se predmet koji je u\v{s}ao u scenu kompleksan, onda \'{c}e
+        algoritam za detekciju predemta iz pozadine detektovati dva
+        razli\v{c}ita predmeta koja \'{c}e se tako i interpretirati. Takodje,
+        ukoliko predmet koji je u\v{s}ao u scenu ostane dovoljno dugo vremena
+        tu, kamera \'{c}e fokusirati sliku u odnosu na novonastalu scenu, a
+        alogirtam za odredjivanje predmeta iz pozadine \'{c}e uzeti u obzir i
+        predmet nakon nekoliko frejmova. Pa \'{c}e se dobiti druga\v{c}ija
+        scena na kojoj \'{c}e se vr\v{s}iti odredjivanje stanja dioda, \v{s}to
+        ne\'{c}e biti validno.
+
+        \begin{table}[h!]
+            \begin{tabular}{ll}
+                \includegraphics[scale=0.3]{intrusionSecond.png} &
+                \includegraphics[scale=0.3]{intrusionThird.png} \\
+                Odredjena dva objekta &
+                Objekat koji naru\v{s}ava odredjivanje stanja
+            \end{tabular}
+        \end{table}
+
+        Ovo se mo\v{z}e prevazi\'{c}i tako \v{s}to se frejm za pravljenje
+        maske uzme iz dela kalibracije, i kao takav zadr\v{z}i sve vreme
+        pokretanja programa. Time \'{c}e se spre\v{c}iti druga opisana
+        situacija, a to je prilagodjavanje sistema na novonastalu scenu,
+        \v{s}to bi uzrokovalo lo\v{s}u detekciju stanja tastature.
 
         \chapter{Apendix}
 

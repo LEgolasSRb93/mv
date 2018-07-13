@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2018.5.8)  9 JUL 2018 17:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2018.5.8)  13 JUL 2018 13:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -463,18 +463,18 @@ Now handling font encoding U ...
 )) (./mvIzvestaj.aux)
 \openout1 = `mvIzvestaj.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -574,7 +574,7 @@ Glava 1.
 <front.jpg, id=19, 310.3595pt x 143.3355pt>
 File: front.jpg Graphic file (type jpg)
 <use front.jpg>
-Package pdftex.def Info: front.jpg  used on input line 43.
+Package pdftex.def Info: front.jpg  used on input line 45.
 (pdftex.def)             Requested size: 155.17935pt x 71.66756pt.
 [3
 
@@ -583,174 +583,268 @@ Glava 2.
 <keyboardSetup.png, id=23, 483.8075pt x 135.50626pt>
 File: keyboardSetup.png Graphic file (type png)
 <use keyboardSetup.png>
-Package pdftex.def Info: keyboardSetup.png  used on input line 70.
+Package pdftex.def Info: keyboardSetup.png  used on input line 74.
 (pdftex.def)             Requested size: 241.90315pt x 67.75294pt.
 <canmsg.png, id=25, 1184.425pt x 321.2pt>
 File: canmsg.png Graphic file (type png)
 <use canmsg.png>
-Package pdftex.def Info: canmsg.png  used on input line 81.
+Package pdftex.def Info: canmsg.png  used on input line 86.
 (pdftex.def)             Requested size: 355.33025pt x 96.36073pt.
 [4
 
  <./keyboardSetup.png>] [5 <./canmsg.png>]
 Glava 3.
+<original.png, id=34, 646.415pt x 505.89pt>
+File: original.png Graphic file (type png)
+<use original.png>
+Package pdftex.def Info: original.png  used on input line 112.
+(pdftex.def)             Requested size: 193.926pt x 151.76816pt.
+<gray.png, id=35, 646.415pt x 505.89pt>
+File: gray.png Graphic file (type png)
+<use gray.png>
+Package pdftex.def Info: gray.png  used on input line 113.
+(pdftex.def)             Requested size: 193.926pt x 151.76816pt.
+
+Overfull \hbox (21.85202pt too wide) in paragraph at lines 111--117
+[][] 
+ []
+
 [6
 
-] [7]
+ <./original.png (PNG copy)> <./gray.png (PNG copy)>]
+<histogram.png, id=41, 646.415pt x 506.89375pt>
+File: histogram.png Graphic file (type png)
+<use histogram.png>
+Package pdftex.def Info: histogram.png  used on input line 127.
+(pdftex.def)             Requested size: 193.926pt x 152.06929pt.
+<gauss.png, id=42, 646.415pt x 505.89pt>
+File: gauss.png Graphic file (type png)
+<use gauss.png>
+Package pdftex.def Info: gauss.png  used on input line 128.
+(pdftex.def)             Requested size: 193.926pt x 151.76816pt.
+
+Overfull \hbox (32.99384pt too wide) in paragraph at lines 126--132
+[][] 
+ []
+
+<bin.png, id=43, 646.415pt x 505.89pt>
+File: bin.png Graphic file (type png)
+<use bin.png>
+Package pdftex.def Info: bin.png  used on input line 145.
+(pdftex.def)             Requested size: 193.926pt x 151.76816pt.
+<hough.png, id=44, 646.415pt x 502.87875pt>
+File: hough.png Graphic file (type png)
+<use hough.png>
+Package pdftex.def Info: hough.png  used on input line 146.
+(pdftex.def)             Requested size: 193.926pt x 150.86478pt.
+
+Overfull \hbox (42.60257pt too wide) in paragraph at lines 144--150
+[][] 
+ []
+
+[7 <./histogram.png (PNG copy)> <./gauss.png (PNG copy)> <./bin.png (PNG copy)>
+ <./hough.png (PNG copy)>]
+<intrusionFirst.png, id=48, 646.415pt x 505.89pt>
+File: intrusionFirst.png Graphic file (type png)
+<use intrusionFirst.png>
+Package pdftex.def Info: intrusionFirst.png  used on input line 200.
+(pdftex.def)             Requested size: 193.926pt x 151.76816pt.
+<intrusionMsg.png, id=49, 456.70625pt x 230.8625pt>
+File: intrusionMsg.png Graphic file (type png)
+<use intrusionMsg.png>
+Package pdftex.def Info: intrusionMsg.png  used on input line 201.
+(pdftex.def)             Requested size: 182.67926pt x 92.34335pt.
+
+Overfull \hbox (26.74399pt too wide) in paragraph at lines 199--205
+[][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[8]
+<firstKey.png, id=53, 646.415pt x 505.89pt>
+File: firstKey.png Graphic file (type png)
+<use firstKey.png>
+Package pdftex.def Info: firstKey.png  used on input line 222.
+(pdftex.def)             Requested size: 193.926pt x 151.76816pt.
+<firstRep.png, id=54, 411.5375pt x 366.36874pt>
+File: firstRep.png Graphic file (type png)
+<use firstRep.png>
+Package pdftex.def Info: firstRep.png  used on input line 223.
+(pdftex.def)             Requested size: 164.61208pt x 146.54489pt.
+ [9 <./intrusionFirst.png (PNG copy)> <./intrusionMsg.png (PNG copy)> <./firstK
+ey.png (PNG copy)> <./firstRep.png (PNG copy)>]
+<intrusionSecond.png, id=58, 646.415pt x 505.89pt>
+File: intrusionSecond.png Graphic file (type png)
+<use intrusionSecond.png>
+Package pdftex.def Info: intrusionSecond.png  used on input line 245.
+(pdftex.def)             Requested size: 193.926pt x 151.76816pt.
+<intrusionThird.png, id=59, 646.415pt x 505.89pt>
+File: intrusionThird.png Graphic file (type png)
+<use intrusionThird.png>
+Package pdftex.def Info: intrusionThird.png  used on input line 246.
+(pdftex.def)             Requested size: 193.926pt x 151.76816pt.
+
+Overfull \hbox (42.76785pt too wide) in paragraph at lines 244--250
+[][] 
+ []
+
+[10 <./intrusionSecond.png (PNG copy)> <./intrusionThird.png (PNG copy)>]
 Glava 4.
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 156.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 260.
 
 (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-Overfull \hbox (29.79749pt too wide) in paragraph at lines 299--299
+Overfull \hbox (29.79749pt too wide) in paragraph at lines 403--403
 []    \T1/cmtt/m/n/12 ret,binImg = cv2.threshold(grayImg, 200, 255, cv2.THRESH_
 BINARY)[] 
  []
 
 
-Overfull \hbox (29.79749pt too wide) in paragraph at lines 299--299
+Overfull \hbox (29.79749pt too wide) in paragraph at lines 403--403
 []            \T1/cmtt/m/n/12 circlesFirst = circlesFirst[circlesFirst[:,1].arg
 sort()][] 
  []
 
-[8
+[11
 
 ]
-Overfull \hbox (48.31796pt too wide) in paragraph at lines 299--299
+Overfull \hbox (48.31796pt too wide) in paragraph at lines 403--403
 []            \T1/cmtt/m/n/12 circlesSecond = circlesSecond[circlesSecond[:,1].
 argsort()][] 
  []
 
 
-Overfull \hbox (29.79749pt too wide) in paragraph at lines 299--299
+Overfull \hbox (29.79749pt too wide) in paragraph at lines 403--403
 []            \T1/cmtt/m/n/12 circlesThird = circlesThird[circlesThird[:,1].arg
 sort()][] 
  []
 
 
-Overfull \hbox (79.18542pt too wide) in paragraph at lines 299--299
+Overfull \hbox (79.18542pt too wide) in paragraph at lines 403--403
 []            \T1/cmtt/m/n/12 circles = np.vstack((circlesFirst, circlesSecond,
  circlesThird))[] 
  []
 
 
-Overfull \hbox (54.49146pt too wide) in paragraph at lines 299--299
+Overfull \hbox (54.49146pt too wide) in paragraph at lines 403--403
 []\T1/cmtt/m/n/12 # make structuring element for morph transformation of substr
 acted image[] 
  []
 
 
-Overfull \hbox (60.66495pt too wide) in paragraph at lines 299--299
+Overfull \hbox (60.66495pt too wide) in paragraph at lines 403--403
 []\T1/cmtt/m/n/12 # MORPH_OPEN with MORPH_ELLIPSE, to kill all noise from MOG2 
 substraction[] 
  []
 
 
-Overfull \hbox (73.01193pt too wide) in paragraph at lines 299--299
+Overfull \hbox (73.01193pt too wide) in paragraph at lines 403--403
 []\T1/cmtt/m/n/12 # getting the changes from live image in comparison with back
 ground created[] 
  []
 
 
-Overfull \hbox (60.66495pt too wide) in paragraph at lines 299--299
+Overfull \hbox (60.66495pt too wide) in paragraph at lines 403--403
 []\T1/cmtt/m/n/12 # with MOG2 here. applying the subtractor after every frame t
 aken in loop[] 
  []
 
 
-Overfull \hbox (73.01193pt too wide) in paragraph at lines 299--299
+Overfull \hbox (73.01193pt too wide) in paragraph at lines 403--403
 []        \T1/cmtt/m/n/12 # only for showing the image from camera, only made f
 or positioning[] 
  []
 
-[9]
-Overfull \hbox (66.83844pt too wide) in paragraph at lines 299--299
+[12]
+Overfull \hbox (66.83844pt too wide) in paragraph at lines 403--403
 []        \T1/cmtt/m/n/12 # use substractor on current frame, and morph on subs
 tracted image[] 
  []
 
 
-Overfull \hbox (11.27701pt too wide) in paragraph at lines 299--299
+Overfull \hbox (11.27701pt too wide) in paragraph at lines 403--403
 []        \T1/cmtt/m/n/12 fgmask = cv2.morphologyEx(fgmask, cv2.MORPH_OPEN, ker
 nel)[] 
  []
 
 
-Overfull \hbox (54.49146pt too wide) in paragraph at lines 299--299
+Overfull \hbox (54.49146pt too wide) in paragraph at lines 403--403
 []        \T1/cmtt/m/n/12 # find contour features and draw rectangle if there i
 s something[] 
  []
 
 
-Overfull \hbox (54.49146pt too wide) in paragraph at lines 299--299
+Overfull \hbox (54.49146pt too wide) in paragraph at lines 403--403
 []        \T1/cmtt/m/n/12 output = cv2.connectedComponentsWithStats(fgmask, 4, 
 cv2.CV_32S)[] 
  []
 
 
-Overfull \hbox (35.97098pt too wide) in paragraph at lines 299--299
+Overfull \hbox (35.97098pt too wide) in paragraph at lines 403--403
 []            \T1/cmtt/m/n/12 if output[2][i][4] >= 8000 and output[2][i][4] <=
  100000:[] 
  []
 
 
-Overfull \hbox (54.49146pt too wide) in paragraph at lines 299--299
+Overfull \hbox (54.49146pt too wide) in paragraph at lines 403--403
 []                \T1/cmtt/m/n/12 cv2.rectangle(frame, (output[2][i][0], output
 [2][i][1]),[] 
  []
 
 
-Overfull \hbox (23.624pt too wide) in paragraph at lines 299--299
+Overfull \hbox (23.624pt too wide) in paragraph at lines 403--403
 []            \T1/cmtt/m/n/12 smothedImg = cv2.GaussianBlur(modifiedImg, (5, 5)
 , 1.5)[] 
  []
 
-[10]
-Overfull \hbox (79.18542pt too wide) in paragraph at lines 299--299
+[13]
+Overfull \hbox (79.18542pt too wide) in paragraph at lines 403--403
 []            \T1/cmtt/m/n/12 ret,binImg = cv2.threshold(grayImg, 200, 255, cv2
 .THRESH_BINARY)[] 
  []
 
 
-Overfull \hbox (79.18542pt too wide) in paragraph at lines 299--299
+Overfull \hbox (79.18542pt too wide) in paragraph at lines 403--403
 []                \T1/cmtt/m/n/12 # ask for every found diode is it white or bl
 ack (on or off)[] 
  []
 
 
-Overfull \hbox (29.79749pt too wide) in paragraph at lines 299--299
+Overfull \hbox (29.79749pt too wide) in paragraph at lines 403--403
 []                \T1/cmtt/m/n/12 if binImg[circlesAll[i][1],circlesAll[i][0]] 
 == 255:[] 
  []
 
 
-Overfull \hbox (91.53241pt too wide) in paragraph at lines 299--299
+Overfull \hbox (91.53241pt too wide) in paragraph at lines 403--403
 []                \T1/cmtt/m/n/12 print("   ", row+1, "   |   ", col+1, "   |  
 ", diodeState[i])[] 
  []
 
 
-Overfull \hbox (17.4505pt too wide) in paragraph at lines 299--299
+Overfull \hbox (17.4505pt too wide) in paragraph at lines 403--403
 []            \T1/cmtt/m/n/12 ### drawing positions of diodes calibration have 
 found[] 
  []
 
 
-Overfull \hbox (11.27701pt too wide) in paragraph at lines 299--299
+Overfull \hbox (11.27701pt too wide) in paragraph at lines 403--403
 []                \T1/cmtt/m/n/12 #  cv2.circle(frame,(i[0],i[1]),i[2],(0,255,0
 ),2)[] 
  []
 
-[11] (./mvIzvestaj.aux) ) 
+[14] (./mvIzvestaj.aux) ) 
 Here is how much of TeX's memory you used:
- 3489 strings out of 492982
- 42566 string characters out of 6138580
+ 3549 strings out of 492982
+ 43559 string characters out of 6138580
  112331 words of memory out of 5000000
- 6969 multiletter control sequences out of 15000+600000
+ 7017 multiletter control sequences out of 15000+600000
  16132 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,6n,25p,277b,264s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,12n,25p,277b,301s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-sup
 er-t1.enc}</usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr
 /share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-di
@@ -760,10 +854,10 @@ public/cm-super/sfcc1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super
 /usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/share/texm
 f-dist/fonts/type1/public/cm-super/sfti1440.pfb></usr/share/texmf-dist/fonts/ty
 pe1/public/cm-super/sftt1200.pfb>
-Output written on mvIzvestaj.pdf (12 pages, 445649 bytes).
+Output written on mvIzvestaj.pdf (15 pages, 10955883 bytes).
 PDF statistics:
- 86 PDF objects out of 1000 (max. 8388607)
- 57 compressed objects within 1 object stream
+ 108 PDF objects out of 1000 (max. 8388607)
+ 64 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
 

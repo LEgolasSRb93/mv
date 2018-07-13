@@ -3,5 +3,5 @@
 \contentsline {chapter}{\numberline {2}Opis sistema}{4}
 \contentsline {chapter}{\numberline {3}Softverska implementacija}{6}
 \contentsline {section}{\numberline {3.1}Deo za kalibraciju}{6}
-\contentsline {section}{\numberline {3.2}Deo za procesiranje}{7}
-\contentsline {chapter}{\numberline {4}Apendix}{8}
+\contentsline {section}{\numberline {3.2}Deo za procesiranje}{8}
+\contentsline {chapter}{\numberline {4}Apendix}{11}
